@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.todo-container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+    transform: scale(0.9);
+    opacity: 0;
+    animation: fadeInScale 0.5s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.todo-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.actions button {
+    padding: 10px 20px;
+    background: #9b59b6;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.actions button:hover {
+    background: #71b7e6;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.actions button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+#calendar {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#calendar:hover {
+    transform: scale(1.05);
+}
+
+/* Additional advanced styling for calendar cells */
+#calendar .fc-day {
+    transition: background-color 0.3s ease;
+}
+
+#calendar .fc-day:hover {
+    background-color: #f0f0f0;
+}
+
+/* Styling for today's date in the calendar */
+#calendar .fc-day-today {
+    background-color: #e6f7ff !important;
+}
+
+/* Styling for event titles */
+#calendar .fc-event-title {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Styling for event containers */
+#calendar .fc-event {
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #9b59b6;
+    border: none;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#calendar .fc-event:hover {
+    background-color: #71b7e6;
+}
